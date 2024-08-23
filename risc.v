@@ -181,7 +181,7 @@ endmodule
 
 
 module controller(input jump,clk,reset,output ctrl);
-// fsm controller
+// fsm to control jump instruction
 reg [1:0]state,nstate;
 
 always @(posedge clk,negedge reset)
@@ -208,7 +208,7 @@ endmodule
 
 
 module multiplexer(input select,input [15:0]data1,data2,output reg[15:0]out);
-// multiplexer module
+// multiplexer module used for forwarding technique to remove Read After Write Hazards
 
 always @*
 begin
